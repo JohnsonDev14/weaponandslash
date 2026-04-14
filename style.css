@@ -1,6 +1,20 @@
-*{
+* {
     padding: 0%;
     margin: 0%;
+}
+
+.sekuya-regular {
+  font-family: "Sekuya", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.jost-regular {
+  font-family: "Jost", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .container {
@@ -40,10 +54,24 @@ header {
 
     width: 50px;
     height: 50px;
-
-    background: #d9d9d9;
-
     border-radius: 50%;
+    background-image: url("imagem/Logo\ Medieval\ _Weapon\ &\ Slash_.png");
+
+    background-size: contain;
+
+    background-repeat: no-repeat;
+
+    background-position: center;
+
+}
+
+.logo a{
+
+display:block;
+
+width:100%;
+
+height:100%;
 
 }
 
@@ -78,6 +106,9 @@ nav a:hover {
     color: white;
     padding: 6px 12px;
     border-radius: 5px;
+    font-family: "Sekuya", system-ui;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .login a:hover {
@@ -120,11 +151,31 @@ main h1 {
 
 .card {
 
+    display: block;
+
+    text-decoration: none;
+
+    color: inherit;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
     background: #3a2f2f;
 
-    padding: 20px;
+    padding: 15px;
 
-    color: white;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+}
+
+.card:hover {
+
+    transform: scale(1.03);
+
+    transition: 0.2s;
+
+    cursor: pointer;
 
 }
 
@@ -372,29 +423,29 @@ label {
 
 }
 
-button{
+button {
 
-margin-top:10px;
+    margin-top: 10px;
 
-padding:12px;
+    padding: 12px;
 
-border:none;
+    border: none;
 
-border-radius:6px;
+    border-radius: 6px;
 
-background:#111;
+    background: #111;
 
-color:white;
+    color: white;
 
-font-weight:bold;
+    font-weight: bold;
 
-cursor:pointer;
+    cursor: pointer;
 
-transition:0.2s;
+    transition: 0.2s;
 
 }
 
-button:hover{
+button:hover {
 
     background: white;
 
@@ -404,108 +455,108 @@ button:hover{
 
 }
 
-.pagina-produto main{
+.pagina-produto main {
 
-display:flex;
+    display: flex;
 
-justify-content:center;
+    justify-content: center;
 
-align-items:center;
-
-}
-
-.pagina-produto .produto{
-
-display:grid;
-
-grid-template-columns: 1fr 1fr;
-
-width:100%;
-
-height:100%;
-
-padding:60px;
-
-gap:80px;
+    align-items: center;
 
 }
 
-.pagina-produto .imagem{
+.pagina-produto .produto {
 
-width:100%;
+    display: grid;
 
-height:70vh;
+    grid-template-columns: 1fr 1fr;
 
-background:#d9d9d9;
+    width: 100%;
 
-border-radius:6px;
+    height: 100%;
 
-background-size:cover;
+    padding: 60px;
 
-background-position:center;
-
-}
-
-.pagina-produto .info{
-
-display:flex;
-
-flex-direction:column;
-
-justify-content:center;
-
-gap:35px;
-
-text-align:left;
+    gap: 80px;
 
 }
 
-.pagina-produto .info h2{
+.pagina-produto .imagem {
 
-font-size:34px;
+    width: 100%;
 
-}
+    height: 70vh;
 
-.pagina-produto .info h3{
+    background: #d9d9d9;
 
-font-size:28px;
+    border-radius: 6px;
 
-}
+    background-size: cover;
 
-.pagina-produto .info p{
-
-max-width:420px;
-
-font-size:16px;
-
-line-height:1.5;
+    background-position: center;
 
 }
 
-.pagina-produto .botao{
+.pagina-produto .info {
 
-background:black;
+    display: flex;
 
-color:white;
+    flex-direction: column;
 
-padding:14px 24px;
+    justify-content: center;
 
-text-decoration:none;
+    gap: 35px;
 
-width:240px;
-
-text-align:center;
-
-border-radius:4px;
-
-font-weight:bold;
+    text-align: left;
 
 }
 
-.pagina-produto .botao:hover{
+.pagina-produto .info h2 {
 
-background:white;
+    font-size: 34px;
 
-color:#d62828;
+}
+
+.pagina-produto .info h3 {
+
+    font-size: 28px;
+
+}
+
+.pagina-produto .info p {
+
+    max-width: 420px;
+
+    font-size: 16px;
+
+    line-height: 1.5;
+
+}
+
+.pagina-produto .botao {
+
+    background: black;
+
+    color: white;
+
+    padding: 14px 24px;
+
+    text-decoration: none;
+
+    width: 240px;
+
+    text-align: center;
+
+    border-radius: 4px;
+
+    font-weight: bold;
+
+}
+
+.pagina-produto .botao:hover {
+
+    background: white;
+
+    color: #d62828;
 
 }
