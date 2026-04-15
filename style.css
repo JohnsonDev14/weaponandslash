@@ -1,215 +1,263 @@
+/* Remove margens e espaçamentos padrão de todos os elementos */
 * {
     padding: 0%;
     margin: 0%;
 }
 
+/* Classe para aplicar a fonte Sekuya */
 .sekuya-regular {
-  font-family: "Sekuya", system-ui;
-  font-weight: 400;
-  font-style: normal;
+    font-family: "Sekuya", system-ui; /* Define a fonte principal */
+    font-weight: 400; /* Peso normal da fonte */
+    font-style: normal; /* Estilo normal (não itálico) */
 }
 
-
+/* Classe para aplicar a fonte Jost */
 .jost-regular {
-  font-family: "Jost", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
+    font-family: "Jost", sans-serif; /* Define a fonte Jost */
+    font-optical-sizing: auto; /* Ajusta automaticamente a renderização da fonte */
+    font-weight: 400; /* Peso normal */
+    font-style: normal; /* Estilo normal */
 }
 
+/* Versão da fonte Jost usada para parágrafos maiores */
+.jost-regular-p {
+    font-family: "Jost", sans-serif; /* Define a fonte */
+    font-optical-sizing: auto; /* Ajuste automático da fonte */
+    font-weight: 600; /* Fonte mais grossa */
+    font-style: normal; /* Estilo normal */
+    font-size: 30px; /* Tamanho da fonte */
+}
+
+/* Container principal da página */
 .container {
 
-    display: grid;
+    display: grid; /* Ativa layout em grid */
 
-    grid-template-rows: 80px 1fr 60px;
+    grid-template-rows: 80px 1fr 60px; /* Define altura das linhas: header, main e footer */
 
     grid-template-areas:
-        "header"
-        "main"
-        "footer";
+        "header" /* Área do cabeçalho */
+        "main"   /* Área principal */
+        "footer"; /* Área do rodapé */
 
-    height: 100vh;
+    height: 100vh; /* Altura igual à tela inteira */
 
 }
 
+/* Estilo do cabeçalho */
 header {
 
-    grid-area: header;
+    grid-area: header; /* Define que esse elemento ocupa a área header do grid */
 
-    background: #d62828;
+    background: #d62828; /* Cor de fundo vermelha */
 
-    display: flex;
+    display: flex; /* Layout flexbox */
 
-    align-items: center;
+    align-items: center; /* Alinha itens verticalmente no centro */
 
-    justify-content: space-between;
+    justify-content: space-between; /* Espaça os elementos horizontalmente */
 
-    padding: 0 20px;
+    padding: 0 20px; /* Espaçamento interno esquerda e direita */
 
-    color: white;
+    color: white; /* Cor do texto */
 
 }
 
+/* Logo do site */
 .logo {
 
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-image: url("imagem/Logo\ Medieval\ _Weapon\ &\ Slash_.png");
+    width: 50px; /* Largura da logo */
+    height: 50px; /* Altura da logo */
+    border-radius: 50%; /* Torna a logo circular */
+    background-image: url("imagem/Logo\ Medieval\ _Weapon\ &\ Slash_.png"); /* Define imagem da logo */
 
-    background-size: contain;
+    background-size: contain; /* Faz a imagem caber inteira dentro da div */
 
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; /* Impede repetição da imagem */
 
-    background-position: center;
-
-}
-
-.logo a{
-
-display:block;
-
-width:100%;
-
-height:100%;
+    background-position: center; /* Centraliza a imagem */
 
 }
 
+/* Link dentro da logo */
+.logo a {
+
+    display: block; /* Faz o link ocupar toda a div */
+
+    width: 100%; /* Largura total */
+
+    height: 100%; /* Altura total */
+
+}
+
+/* Menu de navegação */
 nav {
 
-    display: flex;
+    display: flex; /* Layout flex */
 
-    gap: 25px;
+    gap: 25px; /* Espaço entre os links */
 
 }
 
+/* Estilo dos links do menu */
 nav a {
-    text-decoration: none;
+    text-decoration: none; /* Remove sublinhado */
 
-    color: white;
+    color: white; /* Cor do texto */
 
-    padding: 8px 15px;
+    padding: 8px 15px; /* Espaçamento interno */
 
-    border-radius: 6px;
+    border-radius: 6px; /* Bordas arredondadas */
 
-    transition: 0.3s;
+    transition: 0.3s; /* Animação suave */
+
 }
 
+/* Efeito hover nos links */
 nav a:hover {
-    background: white;
+    background: white; /* Fundo branco */
 
-    color: #d62828;
+    color: #d62828; /* Texto vermelho */
 }
 
+/* Links da área de login */
 .login a {
-    text-decoration: none;
-    color: white;
-    padding: 6px 12px;
-    border-radius: 5px;
-    font-family: "Sekuya", system-ui;
-    font-weight: 400;
-    font-style: normal;
+    text-decoration: none; /* Remove sublinhado */
+    color: white; /* Texto branco */
+    padding: 6px 12px; /* Espaçamento interno */
+    border-radius: 5px; /* Bordas arredondadas */
+    font-family: "Sekuya", system-ui; /* Fonte Sekuya */
+    font-weight: 400; /* Peso normal */
+    font-style: normal; /* Estilo normal */
 }
 
+/* Hover nos links de login */
 .login a:hover {
-    background: white;
+    background: white; /* Fundo branco */
 
-    color: #d62828;
+    color: #d62828; /* Texto vermelho */
 
-    transition: 0.3s;
+    transition: 0.3s; /* Animação suave */
+
 }
 
+/* Área principal do site */
 main {
 
-    grid-area: main;
+    grid-area: main; /* Define área do grid */
 
-    background: #5c5c5c;
+    background: #5c5c5c; /* Cor de fundo cinza */
 
-    padding: 40px;
+    padding: 40px; /* Espaçamento interno */
 
-    text-align: center;
+    text-align: center; /* Centraliza texto */
 
-    color: white;
+    color: white; /* Texto branco */
 
 }
 
+/* Título dentro do main */
 main h1 {
-    text-align: center;
+    text-align: center; /* Centraliza o título */
 }
 
+/* Grid de produtos */
 .produtos {
 
-    display: grid;
+    display: grid; /* Layout grid */
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas iguais */
 
-    gap: 30px;
+    gap: 30px; /* Espaço entre cards */
 
-    margin-top: 40px;
+    margin-top: 40px; /* Espaço acima */
 
 }
 
+/* Card de produto */
 .card {
 
-    display: block;
+    display: block; /* Permite transformar o card em link */
 
-    text-decoration: none;
+    text-decoration: none; /* Remove sublinhado */
 
-    color: inherit;
+    color: inherit; /* Herda cor do texto */
 
-    border-radius: 10px;
+    border-radius: 10px; /* Bordas arredondadas */
 
-    overflow: hidden;
+    overflow: hidden; /* Esconde conteúdo que ultrapassar */
 
-    background: #3a2f2f;
+    background: #3a2f2f; /* Fundo escuro */
 
-    padding: 15px;
+    padding: 15px; /* Espaçamento interno */
 
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Animação */
 
 }
 
+/* Efeito ao passar mouse no card */
 .card:hover {
 
-    transform: scale(1.03);
+    transform: scale(1.03); /* Aumenta levemente o tamanho */
 
-    transition: 0.2s;
+    transition: 0.2s; /* Animação */
 
-    cursor: pointer;
+    cursor: pointer; /* Mostra cursor clicável */
 
 }
 
+/* Container da imagem do card */
 .img {
 
-    height: 120px;
+    height: 120px; /* Altura da imagem */
 
-    background: #c4c4c4;
+    margin-bottom: 15px; /* Espaço abaixo */
 
-    margin-bottom: 15px;
+    overflow: hidden; /* Esconde excesso da imagem */
+
+    border-radius: 8px; /* Bordas arredondadas */
 
 }
 
+/* Imagem dentro da div */
+.img img {
+
+    width: 100%; /* Ocupa toda largura */
+
+    height: 100%; /* Ocupa toda altura */
+
+    object-fit: cover; /* Corta imagem para caber sem distorcer */
+
+}
+
+/* Cor verde para preços */
+.money {
+    color: rgb(1, 255, 1);
+}
+
+/* Rodapé do site */
 footer {
 
-    grid-area: footer;
+    grid-area: footer; /* Área do grid */
 
-    background: #d62828;
+    background: #d62828; /* Fundo vermelho */
 
-    color: white;
+    color: white; /* Texto branco */
 
-    display: flex;
+    display: flex; /* Layout flex */
 
-    justify-content: center;
+    justify-content: center; /* Centraliza horizontalmente */
 
-    align-items: center;
+    align-items: center; /* Centraliza verticalmente */
 
 }
 
+/* Responsividade para telas pequenas */
 @media (max-width: 600px) {
 
     .container {
 
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Uma coluna */
 
         grid-template-areas:
 
@@ -219,20 +267,21 @@ footer {
     }
 
     header {
-        flex-direction: column;
-        gap: 10px;
+        flex-direction: column; /* Elementos em coluna */
+        gap: 10px; /* Espaço entre eles */
     }
 
     main {
-        padding: 20px;
+        padding: 20px; /* Menos espaçamento */
     }
 
 }
 
+/* Layout especial da página carrinho */
 .carrinho .container {
 
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 3fr 1fr; /* main maior que aside */
     grid-template-rows: 80px 1fr 60px;
 
     grid-template-areas:
@@ -244,19 +293,22 @@ footer {
 
 }
 
+/* Área principal do carrinho */
 .carrinho main {
     background: #3a2f2f;
     text-align: left;
-    overflow-y: auto;
+    overflow-y: auto; /* Permite rolagem vertical */
     min-height: 0;
 }
 
+/* Barra lateral */
 aside {
     grid-area: aside;
     background: #5c5c5c;
     overflow: hidden;
 }
 
+/* Container do carrossel */
 .carousel {
 
     width: 100%;
@@ -266,18 +318,20 @@ aside {
 
 }
 
+/* Área que contém os slides */
 .slides {
 
     display: flex;
 
-    width: 200%;
+    width: 200%; /* 2 imagens lado a lado */
 
     height: 100%;
 
-    animation: slide 8s infinite;
+    animation: slide 8s infinite; /* animação contínua */
 
 }
 
+/* Imagens do slide */
 .slides img {
 
     width: 100%;
@@ -287,33 +341,25 @@ aside {
 
 }
 
+/* Animação do carrossel */
 @keyframes slide {
 
-    0% {
-        transform: translateX(0);
-    }
+    0% { transform: translateX(0); }
 
-    45% {
-        transform: translateX(0);
-    }
+    45% { transform: translateX(0); }
 
-    50% {
-        transform: translateX(-100%);
-    }
+    50% { transform: translateX(-100%); }
 
-    95% {
-        transform: translateX(-100%);
-    }
+    95% { transform: translateX(-100%); }
 
-    100% {
-        transform: translateX(0);
-    }
+    100% { transform: translateX(0); }
 
 }
 
+/* Caixa de compra fixa */
 .comprar {
 
-    position: sticky;
+    position: sticky; /* Fixa quando chega no fundo */
 
     bottom: 20px;
 
@@ -333,6 +379,7 @@ aside {
 
 }
 
+/* Botão comprar */
 .comprar a {
 
     background: black;
@@ -346,6 +393,7 @@ aside {
 
 }
 
+/* Layout da página cadastro */
 .cadastro .container {
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
@@ -359,26 +407,28 @@ aside {
     height: 100vh;
 }
 
+/* Aside esquerdo */
 .asideE {
     grid-area: asideE;
     background: #5c5c5c;
 }
 
+/* Aside direito */
 .asideD {
     grid-area: asideD;
     background: #5c5c5c;
 }
 
+/* Main da página cadastro */
 .cadastro main {
     background: #3a2f2f;
     display: flex;
     justify-content: center;
-
     align-items: flex-start;
-
     padding-top: 80px;
 }
 
+/* Container do formulário */
 .formulario {
 
     display: flex;
@@ -391,6 +441,7 @@ aside {
 
 }
 
+/* Formulário */
 form {
 
     display: flex;
@@ -403,18 +454,37 @@ form {
 
 }
 
+/* Inputs */
 input {
 
     width: 100%;
 
-    padding: 8px;
+    padding: 10px;
 
-    border: none;
+    border: 1px solid #ccc;
 
-    background: #d9d9d9;
+    border-radius: 6px;
+
+    background: #f5f5f5;
+
+    font-size: 14px;
+
+    transition: 0.2s;
 
 }
 
+/* Quando input está selecionado */
+input:focus {
+
+    outline: none;
+
+    border-color: #d62828;
+
+    background: white;
+
+}
+
+/* Labels */
 label {
 
     font-size: 12px;
@@ -423,6 +493,7 @@ label {
 
 }
 
+/* Botões */
 button {
 
     margin-top: 10px;
@@ -445,16 +516,16 @@ button {
 
 }
 
+/* Hover do botão */
 button:hover {
 
     background: white;
 
     color: #d62828;
 
-    transition: 0.3s;
-
 }
 
+/* Layout da página de produto */
 .pagina-produto main {
 
     display: flex;
@@ -465,6 +536,7 @@ button:hover {
 
 }
 
+/* Grid da página do produto */
 .pagina-produto .produto {
 
     display: grid;
@@ -481,6 +553,7 @@ button:hover {
 
 }
 
+/* Imagem do produto */
 .pagina-produto .imagem {
 
     width: 100%;
@@ -495,8 +568,18 @@ button:hover {
 
     background-position: center;
 
+    overflow: hidden;
+
 }
 
+/* Imagem dentro da div */
+.pagina-produto .imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Informações do produto */
 .pagina-produto .info {
 
     display: flex;
@@ -511,18 +594,17 @@ button:hover {
 
 }
 
+/* Nome do produto */
 .pagina-produto .info h2 {
-
     font-size: 34px;
-
 }
 
+/* Preço */
 .pagina-produto .info h3 {
-
     font-size: 28px;
-
 }
 
+/* Descrição */
 .pagina-produto .info p {
 
     max-width: 420px;
@@ -533,30 +615,48 @@ button:hover {
 
 }
 
-.pagina-produto .botao {
+/* Linha de cliente */
+.cliente {
+    display: flex;
 
-    background: black;
+    gap: 10px;
 
-    color: white;
+    align-items: center;
 
-    padding: 14px 24px;
+    font-family: "Jost", sans-serif;
 
-    text-decoration: none;
+    font-weight: 500;
 
-    width: 240px;
+    font-size: 20px;
+}
 
-    text-align: center;
+/* Dados do cliente */
+.dados_cliente{
 
-    border-radius: 4px;
+display:flex;
 
-    font-weight: bold;
+flex-direction:column;
+
+gap:15px;
+
+margin-top:20px;
+
+font-size:18px;
 
 }
 
-.pagina-produto .botao:hover {
+/* Título perfil */
+.perfil {
+    margin-bottom:30px;
+}
 
-    background: white;
+/* Container central do perfil */
+.perfil_cliente{
 
-    color: #d62828;
+display:flex;
+
+justify-content:center;
+
+align-items:center;
 
 }
