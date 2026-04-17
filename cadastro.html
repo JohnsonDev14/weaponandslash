@@ -13,32 +13,34 @@
 </head>
 
 <script>
-const form = document.querySelector("form");
+    const form = document.querySelector("form");
 
-form.addEventListener("submit", async (e) => {
-    e.preventDefault(); // impede reload
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault(); // impede reload
 
-    const usuario = {
-        username: document.querySelector("#nome").value,
-        email: document.querySelector("#email").value,
-        password: document.querySelector("#senha").value,
-        phone: document.querySelector("#telefone").value,
-        address: document.querySelector("#endereco").value
-    };
+        const usuario = {
+            username: document.querySelector("#nome").value,
+            email: document.querySelector("#email").value,
+            password: document.querySelector("#senha").value,
+            phone: document.querySelector("#telefone").value,
+            address: document.querySelector("#endereco").value
+        };
 
-    try {
-        const resposta = await fetch("http://localhost:3000/users/register", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(usuario)
-        });
+        try {
+            const API_URL = "https://weapon-backend.onrender.com";
 
-        const dados = await resposta.json();
-        console.log(dados);
+            const resposta = await fetch(`${API_URL}/users/register`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(usuario)
+            });
 
-        alert(dados.msg || dados.erro);
+    const dados = await resposta.json();
+    console.log(dados);
+
+    alert(dados.msg || dados.erro);
 
     } catch (erro) {
         console.error("Erro:", erro);
@@ -67,7 +69,7 @@ form.addEventListener("submit", async (e) => {
 
         <main class="sekuya-regular">
             <div class="formulario">
-                <form action="http://localhost:3000/users/register" method="post">
+                <form action="https://weapon-backend.onrender.com/users/register" method="post">
                     <label for="nome">NOME:</label>
                     <input name="nome" id="nome" type="text" placeholder="Digite seu nome">
                     <label for="email">EMAIL:</label>
