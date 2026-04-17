@@ -12,6 +12,40 @@
     <link href="https://fonts.googleapis.com/css2?family=Sekuya&display=swap" rel="stylesheet">
 </head>
 
+<script>
+const form = document.querySelector("form");
+
+form.addEventListener("submit", async (e) => {
+    e.preventDefault(); // impede reload
+
+    const usuario = {
+        username: document.querySelector("#nome").value,
+        email: document.querySelector("#email").value,
+        password: document.querySelector("#senha").value,
+        phone: document.querySelector("#telefone").value,
+        address: document.querySelector("#endereco").value
+    };
+
+    try {
+        const resposta = await fetch("http://localhost:3000/users/register", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(usuario)
+        });
+
+        const dados = await resposta.json();
+        console.log(dados);
+
+        alert(dados.msg || dados.erro);
+
+    } catch (erro) {
+        console.error("Erro:", erro);
+    }
+});
+</script>
+
 <body class="cadastro">
 
     <div class="container">
@@ -33,7 +67,7 @@
 
         <main class="sekuya-regular">
             <div class="formulario">
-                <form action="cadastro.php" method="post">
+                <form action="http://localhost:3000/users/register" method="post">
                     <label for="nome">NOME:</label>
                     <input name="nome" id="nome" type="text" placeholder="Digite seu nome">
                     <label for="email">EMAIL:</label>
