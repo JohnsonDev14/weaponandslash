@@ -24,6 +24,7 @@
                 <nav class="sekuya-regular">
                     <a href="pedido.html">PEDIDOS</a>
                     <a href="carrinho.html">CARRINHO</a>
+                    <a href="produtos_cadastro.html">PRODUTOS</a>
                 </nav>
 
                 <div class="login">
@@ -78,6 +79,40 @@
 
         </div>
     </div>
+    <script>
+
+        async function carregarProdutos() {
+
+            // 1. Buscar o arquivo JSON
+            const resposta = await fetch('produtos_pdo.php');
+
+            // 2. Converter para objeto JavaScript
+            const produtos = await resposta.json();
+
+            // 3. Selecionar onde vai mostrar
+            const container = document.getElementById('listaProdutos');
+
+            // 4. Percorrer os produtos
+            for (let i = 0; i < produtos.length; i++) {
+                const prod = produtos[i];
+                // 5. Criar HTML do produto
+                const card = `
+            <a href="produto.html" class="card">
+                <div class="img"><img src="${prod.imagem}" alt=""></div>
+                <p>${prod.nome}</p>
+                <h2 class="money">R$ ${prod.preco.toFixed(2)}</h2>
+            </a>
+        `;
+                // 6. Inserir na tela
+                container.innerHTML += card;
+            }
+        }
+
+        // 7. Executar função
+        carregarProdutos();
+
+    </script>
+
 </body>
 
 </html>

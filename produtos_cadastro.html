@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Produtos - Weapon And Slash</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="imagem/Logo Medieval _Weapon & Slash_.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Sekuya&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="cadastro">
+    <div class="container">
+
+        <header>
+            <div class="logo"><a href="index.html"></a></div>
+
+            <nav class="sekuya-regular">
+                <a href="pedido.html">PEDIDOS</a>
+                <a href="carrinho.html">CARRINHO</a>
+                <a href="produtos_cadastro.html">PRODUTOS</a>
+            </nav>
+
+            <div class="login">
+                <a>ENTRAR</a>
+                <a href="cadastro.html">CADASTRO</a>
+            </div>
+        </header>
+
+        <aside class="asideE"></aside>
+
+        <main class="sekuya-regular">
+
+            <div class="formulario">
+
+                <h1>Cadastro de Produtos</h1>
+
+                <form id="formProduto">
+
+                    <!-- ID -->
+                    <div class="grupo">
+                        <label for="id">ID do Produto</label>
+                        <input type="number"
+                               id="id"
+                               name="id"
+                               required
+                               min="1">
+                    </div>
+
+                    <!-- NOME -->
+                    <div class="grupo">
+                        <label for="nome">Nome do Produto</label>
+                        <input type="text"
+                               id="nome"
+                               name="nome"
+                               required
+                               minlength="3"
+                               maxlength="100"
+                               placeholder="Digite o nome do produto">
+                    </div>
+
+                    <!-- PREÇO -->
+                    <div class="grupo">
+                        <label for="preco">Preço</label>
+                        <input type="number"
+                               id="preco"
+                               name="preco"
+                               required
+                               min="0"
+                               step="0.01"
+                               placeholder="0.00">
+                    </div>
+
+                    <!-- IMAGEM -->
+                    <div class="grupo">
+                        <label for="imagem">URL da Imagem</label>
+                        <input type="url"
+                               id="imagem"
+                               name="imagem"
+                               value="https://picsum.photos/300/200?random=1"
+                               required
+                               placeholder="https://picsum.photos/300/200?random=1">
+                    </div>
+
+                    <!-- BOTÃO -->
+                    <button type="submit">Cadastrar Produto</button>
+
+                </form>
+
+            </div>
+
+        </main>
+
+        <aside class="asideD"></aside>
+
+        <footer class="jost-regular">
+            2026 - Weapons And Slash - Todos os Direitos Reservados
+        </footer>
+
+    </div>
+
+    <script>
+        alert('produtos_cadastro.html');
+
+        document.getElementById("formProduto").addEventListener("submit", cadastrarProduto);
+
+        async function cadastrarProduto(evento) {
+
+            evento.preventDefault();
+
+            const form = document.getElementById("formProduto");
+            const dadosForm = new FormData(form);
+            const produto = Object.fromEntries(dadosForm.entries());
+            console.log(produto);
+
+            try {
+                const resposta = await fetch("produtos_cadastrar.php", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(produto)
+                });
+
+                debugger;
+
+                const dados = await resposta.json();
+                alert(dados.mensagem);
+
+            } catch (erro) {
+                console.error(erro);
+                alert("Erro ao cadastrar produto");
+            }
+        }
+    </script>
+
+</body>
+
+</html>
